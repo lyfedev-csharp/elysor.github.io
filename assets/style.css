@@ -187,6 +187,51 @@ h1 { font-size: 4rem; margin-bottom: 20px; color: #fff; font-weight: 900; letter
     color: #fff;
 }
 
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.team-card {
+    flex: 0 1 280px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.team-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.05);
+}
+
+.team-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid var(--glass-border);
+}
+
+.team-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 .fade-in {
     animation: fadeUp 0.8s ease forwards;
 }

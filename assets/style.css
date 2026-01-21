@@ -93,14 +93,13 @@ h1 { font-size: 4rem; margin-bottom: 20px; color: #fff; font-weight: 900; letter
 .dot { width: 8px; height: 8px; background: #00ff88; border-radius: 50%; box-shadow: 0 0 10px #00ff88; }
 
 .grid { 
-    display: grid; 
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px; 
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto; 
 }
-
 .card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);

@@ -9,13 +9,12 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-bg: rgba(255, 255, 255, 0.03);
     --accent-purple: #c77dff;
+    --status-green: #00ff88;
 }
 
 /* --- RESET --- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Montserrat', sans-serif !important;
 }
 
@@ -30,213 +29,131 @@ body {
 
 /* --- BACKGROUND GLOW --- */
 .glow-bg {
-    position: fixed;
-    top: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 800px;
+    position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px;
     background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
-    z-index: -1;
-    pointer-events: none;
+    z-index: -1; pointer-events: none;
 }
 
 /* --- NAVIGATION --- */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 15px 30px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(12px);
-    border-radius: 16px;
-    position: sticky;
-    top: 20px;
-    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    width: 90%; max-width: 1200px; margin: 20px auto; padding: 15px 30px;
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px); border-radius: 16px;
+    position: sticky; top: 20px; z-index: 100;
 }
 
-.logo { font-weight: 800; color: #fff; text-decoration: none; font-size: 1.2rem; letter-spacing: -0.5px; }
+.logo { font-weight: 800; color: #fff; text-decoration: none; font-size: 1.2rem; }
 .nav-links { display: flex; gap: 20px; }
 .nav-links a { text-decoration: none; color: var(--text-muted); transition: 0.3s; font-weight: 500; }
 .nav-links a:hover { color: #fff; }
-
-.nav-btn {
-    background: #fff;
-    color: #000;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 700;
-}
+.nav-btn { background: #fff; color: #000; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+.nav-btn:hover { background: var(--accent-purple); color: #fff; }
 
 /* --- HERO SECTION --- */
-.hero { padding: 100px 20px 40px; text-align: center; }
+.hero { padding: 100px 20px 20px; text-align: center; }
 h1 { font-size: 4rem; margin-bottom: 20px; color: #fff; font-weight: 900; letter-spacing: -2px; }
-.subtitle { color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+.subtitle { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; line-height: 1.6; }
 
-/* --- UNIVERSAL GRID ENGINE (Centers Side-by-Side Content) --- */
-.grid, .team-grid, .reviews-container {
-    display: flex;
-    flex-direction: row; /* Default to side-by-side */
-    flex-wrap: wrap;     /* Wrap if screen is too small */
-    justify-content: center; 
-    align-items: stretch;
-    gap: 30px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-}
-
-/* --- HOME & ABOUT EXCEPTION (Keep boxes stacked) --- */
-.features .grid {
-    flex-direction: column;
-    align-items: center;
-}
-
-/* --- CARD STYLING --- */
-.card {
-    width: 100%;
-    max-width: 900px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    padding: 30px 40px;
-    border-radius: 12px;
-    text-align: left;
-    overflow-wrap: break-word;
-}
-
-.card h3 { font-size: 1.4rem; margin-bottom: 10px; color: #fff; }
-.card p { color: var(--text-muted); line-height: 1.5; }
-
-/* --- REVIEWS SPECIFIC --- */
-.reviews-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.review-card-modern {
-    flex: 0 1 350px;
-    height: 250px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-
-.review-img {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0.3;
-    z-index: 1;
-}
-
-.play-btn-overlay {
-    position: relative;
-    z-index: 2;
-    background: #fff;
-    color: #000;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 0.85rem;
-}
-
-/* --- TEAM PAGE SPECIFIC --- */
-.team-card {
-    flex: 0 1 300px;
-    min-height: 280px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    padding: 35px 20px;
-    border-radius: 16px;
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.team-card:hover {
-    border-color: var(--accent-purple);
-    transform: translateY(-5px);
-}
-
-.team-card img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 2px solid var(--accent-purple);
-}
-
-/* --- PRODUCTS PAGE SPECIFIC --- */
-.product-grid {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-}
-
-.product-card {
-    flex: 0 1 450px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-}
-
-.product-card img {
-    width: 120px;
-    margin-bottom: 20px;
-}
-
-/* --- BUTTONS --- */
-.btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.btn-primary { background: #fff; color: #000; }
-.btn-secondary { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--glass-border); }
-
-/* --- STATUS INDICATOR --- */
+/* --- STATUS INDICATOR (Fixed Dot & Glow) --- */
 .status {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(0,255,136,0.05);
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: #00ff88;
-    font-size: 0.8rem;
-    font-weight: 600;
-    border: 1px solid rgba(0,255,136,0.1);
-    margin-top: 20px;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(0, 255, 136, 0.05);
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: var(--status-green);
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    margin: 10px auto 40px auto;
 }
 
-.dot { width: 8px; height: 8px; background: #00ff88; border-radius: 50%; box-shadow: 0 0 10px #00ff88; }
+.dot {
+    width: 8px; height: 8px;
+    background: var(--status-green);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--status-green);
+    display: inline-block;
+}
+
+/* --- GRIDS & LAYOUTS --- */
+.grid, .team-grid {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 25px; width: 90%; max-width: 1100px; margin: 0 auto 60px;
+}
+
+/* Home/About stacked look */
+.features .grid { flex-direction: column; align-items: center; }
+
+/* --- CARD STYLING & HOVER --- */
+.card, .team-card, .product-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover, .team-card:hover, .product-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+    width: 100%; max-width: 800px;
+    padding: 35px; border-radius: 16px;
+    text-align: left;
+}
+
+.card h3 { color: #fff; margin-bottom: 8px; font-size: 1.3rem; }
+.card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* --- PRODUCT PAGE FIX --- */
+.product-grid { display: flex; justify-content: center; padding: 60px 20px; }
+.product-card {
+    flex: 0 1 450px; padding: 50px; border-radius: 24px; text-align: center;
+}
+.product-card img { width: 140px; margin-bottom: 25px; border-radius: 12px; }
+
+/* --- TEAM PAGE FIX --- */
+.team-card {
+    flex: 0 1 320px; padding: 40px 20px; border-radius: 20px; text-align: center;
+}
+.team-card img {
+    width: 110px; height: 110px; border-radius: 50%;
+    object-fit: cover; margin-bottom: 20px;
+    border: 2px solid var(--accent-purple);
+}
+
+/* --- REVIEWS FIX (Centered) --- */
+.reviews-wrapper { width: 100%; display: flex; justify-content: center; padding: 40px 0; }
+.reviews-container { display: flex; justify-content: center; width: 100%; }
+.review-card-modern {
+    flex: 0 1 350px; height: 250px; border-radius: 20px;
+    position: relative; overflow: hidden; display: flex;
+    justify-content: center; align-items: center;
+    border: 1px solid var(--glass-border); text-decoration: none;
+    transition: 0.3s;
+}
+.review-card-modern:hover { border-color: var(--accent-purple); transform: scale(1.02); }
+.review-img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
+
+/* --- BUTTONS --- */
+.btn {
+    padding: 14px 28px; border-radius: 10px; text-decoration: none;
+    font-weight: 700; transition: 0.3s; display: inline-block; cursor: pointer;
+}
+.btn-primary { background: #fff; color: #000; }
+.btn-primary:hover { background: var(--accent-purple); color: #fff; }
+.btn-secondary { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--glass-border); }
+.btn-secondary:hover { background: rgba(255,255,255,0.1); }
 
 /* --- ANIMATIONS & FOOTER --- */
 .fade-in { animation: fadeUp 0.8s ease forwards; }
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 footer { text-align: center; padding: 60px; color: #444; font-size: 0.8rem; margin-top: auto; }

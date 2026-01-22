@@ -156,6 +156,53 @@ h1 { font-size: 4rem; margin-bottom: 20px; font-weight: 900; letter-spacing: -2p
 .btn-primary:hover { background: var(--accent-purple); color: #fff; }
 .btn-secondary { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--glass-border); }
 
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+
+    .grid, .team-grid, .product-grid, .reviews-container {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card, .team-card, .product-card, .review-card-modern {
+        width: 100% !important;
+        max-width: 90% !important;
+        flex: unset !important;
+    }
+
+    .hero .btn, .hero .btn-secondary {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .glow-bg {
+        width: 300px;
+        height: 300px;
+    }
+}
+
 /* --- FOOTER & ANIMATIONS --- */
 .fade-in { animation: fadeUp 0.8s ease forwards; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

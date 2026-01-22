@@ -57,10 +57,20 @@ h1 { font-size: 4rem; margin-bottom: 20px; font-weight: 900; letter-spacing: -2p
 .subtitle { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; line-height: 1.6; }
 
 .status {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: rgba(0, 255, 136, 0.05); padding: 10px 20px; border-radius: 50px;
-    color: var(--status-green); font-size: 0.85rem; font-weight: 700;
-    border: 1px solid rgba(0, 255, 136, 0.1); margin-bottom: 40px;
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px;
+    background: rgba(0, 255, 136, 0.05); 
+    padding: 10px 20px; 
+    border-radius: 50px;
+    color: var(--status-green); 
+    font-size: 0.85rem; 
+    font-weight: 700;
+    border: 1px solid rgba(0, 255, 136, 0.1); 
+    
+    /* Increased margin-top to move it down slightly */
+    margin-top: 25px; 
+    margin-bottom: 50px; 
 }
 .dot { width: 8px; height: 8px; background: var(--status-green); border-radius: 50%; box-shadow: 0 0 12px var(--status-green); }
 

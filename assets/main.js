@@ -5,7 +5,7 @@ document.querySelectorAll(".card").forEach((card, i) => {
 document.addEventListener('mousemove', (e) => {
     const glow = document.querySelector('.glow-bg');
     if (glow) {
-        glow.style.left = e.clientX + 'px';
-        glow.style.top = e.clientY + 'px';
+        glow.style.left = `${e.clientX}px`;
+        glow.style.top = `${e.clientY}px`;
     }
 });
